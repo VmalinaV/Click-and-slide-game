@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Click & Slide</title>
+
+    <link rel="stylesheet" href="styles/style.css">
+    <script id="main-script" src="scripts/main.js" type="module"></script>
+
+</head>
+<body>
+
+    <h1>Click & Slide</h1>
+    <h2 id="information">Choose image and dimensions!</h2>
+    <div id="container">
+        <div class="half-screen">
+            <div id="slider">
+                <a class="slider-btn" id="left-arrow">&lsaquo;</a>
+                <a class="slider-btn" id="right-arrow">&rsaquo;</a>
+    
+                <div id="image-container">
+                    <img src="gfx/vader.png" alt="vader" class="active">
+                    <img src="gfx/soldier.png" alt="soldier">
+                    <img src="gfx/yoda.png" alt="yoda">
+                    <img src="gfx/vader.png" alt="vader">
+                </div>
+            </div>
+    
+            <div class="buttons">
+                <a class="btn" id="3">3 x 3</a>
+                <a class="btn" id="4">4 x 4</a>
+                <a class="btn" id="5">5 x 5</a>
+                <a class="btn" id="6">6 x 6</a>
+            </div>
+
+            <div id="timer-container">
+                <img src="gfx/c0.gif" alt="0">
+                <img src="gfx/c0.gif" alt="0">
+                <img src="gfx/colon.gif" alt="0">
+                <img src="gfx/c0.gif" alt="0">
+                <img src="gfx/c0.gif" alt="0">
+                <img src="gfx/colon.gif" alt="0">
+                <img src="gfx/c0.gif" alt="0">
+                <img src="gfx/c0.gif" alt="0">
+                <img src="gfx/dot.gif" alt="0">
+                <img src="gfx/c0.gif" alt="0">
+                <img src="gfx/c0.gif" alt="0">
+                <img src="gfx/c0.gif" alt="0">
+            </div>
+            <a class="big-btn highscores">HIGHSCORES</a>
+            <a class="big-btn restart">RESTART</a>
+        </div>
+        <div class="half-screen">
+            <div id="game-field"></div>
+        </div>
+        <div id="overlay"></div>
+        <div id="results">
+            <h2>Your Time</h2>
+            <h3></h3>
+            <div id="results-image"></div>
+            <input type="text" id="username" placeholder="username">
+            <a class="big-btn" id="submit-button">Save highscore</a>
+            <a class="big-btn highscores">HIGHSCORES</a>
+            <a class="big-btn restart">PLAY</a>
+        </div>
+        <div id="highscores">
+            <h2>Highscores</h2>
+            <div class="buttons">
+                <a class="btn disabled" id="highscores-3">3 x 3</a>
+                <a class="btn" id="highscores-4">4 x 4</a>
+                <a class="btn" id="highscores-5">5 x 5</a>
+                <a class="btn" id="highscores-6">6 x 6</a>
+            </div>
+            <h3>1.</h3>
+            <h3>2.</h3>
+            <h3>3.</h3>
+            <h3>4.</h3>
+            <h3>5.</h3>
+            <h3>6.</h3>
+            <h3>7.</h3>
+            <h3>8.</h3>
+            <h3>9.</h3>
+            <h3>10.</h3>
+            <a class="big-btn restart">PLAY</a>
+        </div>
+    </div>
+
+    <!-- ERROR HANDLING -->
+    <script>
+        (function () {
+            document.getElementById('main-script').onerror = function () {
+                alert('Sorry, this application requires a web server to run!');
+            }
+        })();
+    </script>
+
+</body>
+</html>

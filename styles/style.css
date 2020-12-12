@@ -1,0 +1,257 @@
+html, body {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: rgb(32, 32, 32);
+    font-family: sans-serif;
+    color: white;
+}
+
+h1 {
+    text-align: center;
+    font-size: 2.5em;
+}
+
+h2 {
+    text-align: center;
+    font-size: 1.5em;
+    margin-top: 0;
+    margin-bottom: 40px;
+}
+
+#container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 1200px;
+    margin: auto;
+}
+
+.half-screen {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+}
+
+/* SLIDER AND IMAGES */
+#image-container {
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    width: 200px;
+    height: 200px;
+}
+
+#image-container img {
+    width: 200px;
+    height: 200px;
+    object-fit: contain;
+}
+
+#slider {
+    position: relative;
+    width: 200px;
+    height: 200px;
+}
+
+#left-arrow, #right-arrow {
+    position: absolute;
+    color: white;
+    width: 20px;
+    height: 64px;
+    font-size: 64px;
+    top: 68px;
+    text-align: center;
+}
+
+#left-arrow {
+    left: -40px;
+}
+
+#right-arrow {
+    left: 220px;
+}
+
+/* BUTTONS */
+.btn {
+    float: left;
+    display: block;
+    width: 75px;
+    background-color: white;
+    color: black;
+    font-weight: bold;
+    margin: 10px 5px;
+    cursor: pointer;
+    text-align: center;
+    font-size: 1.1em;
+    padding: 6px 10px;
+    transition: all 0.3s ease;
+    /* disable text selection highlighting on a button */
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+    -khtml-user-select: none; /* Konqueror HTML */
+    -moz-user-select: none; /* Old versions of Firefox */
+    -ms-user-select: none; /* Internet Explorer/Edge */
+    user-select: none; /* Non-prefixed version, supported by Chrome, Edge, Opera and Firefox */
+}
+
+.slider-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    /* disable text selection highlighting on a button */
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+    -khtml-user-select: none; /* Konqueror HTML */
+    -moz-user-select: none; /* Old versions of Firefox */
+    -ms-user-select: none; /* Internet Explorer/Edge */
+    user-select: none; /* Non-prefixed version, supported by Chrome, Edge, Opera and Firefox */
+}
+
+.btn.disabled, .big-btn.disabled {
+    background-color: gray;
+    cursor: not-allowed;
+}
+
+.slider-btn.disabled {
+    color: gray !important;
+    cursor: not-allowed;
+}
+
+.btn.disabled:hover, .slider-btn.disabled:hover, .big-btn.disabled:hover {
+    transform: none;
+    box-shadow: none;
+    text-shadow: none;
+}
+
+.btn:hover, .big-btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 5px white;
+}
+
+.slider-btn:hover {
+    transform: scale(1.15);
+    text-shadow: 0 0 5px white;
+}
+
+.big-btn {
+    float: left;
+    display: block;
+    background-color: white;
+    color: black;
+    font-weight: bold;
+    width: 140px;
+    margin-top: 20px;
+    cursor: pointer;
+    text-align: center;
+    font-size: 1.1em;
+    padding: 6px 10px;
+    transition: all 0.3s ease;
+    /* disable text selection highlighting on a button */
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+    -khtml-user-select: none; /* Konqueror HTML */
+    -moz-user-select: none; /* Old versions of Firefox */
+    -ms-user-select: none; /* Internet Explorer/Edge */
+    user-select: none; /* Non-prefixed version, supported by Chrome, Edge, Opera and Firefox */
+}
+
+/* GAME FIELD */
+#game-field {
+    position: relative;
+    border: 1px solid gray;
+}
+
+#game-field canvas {
+    display: block;
+    position: absolute;
+    overflow: hidden;
+    box-sizing: border-box;
+}
+
+/* TIMER */
+#timer-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+/* RESULTS */
+#overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.75);
+}
+
+#results, #highscores {
+    display: none;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    width: 350px;
+    height: 600px;
+    border-radius: 50px;
+    box-sizing: border-box;
+    border: 3px solid gray;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgb(80, 79, 79);
+    z-index: 100;
+}
+
+#highscores {
+    z-index: 101;
+}
+
+#results h2, #highscores h2 {
+    font-size: 2.5em;
+    margin-top: 20px;
+    margin-bottom: 0;
+}
+
+#results h3, #highscores h3 {
+    font-size: 1.5em;
+    text-align: center;
+    margin-top: 10px;
+}
+
+#results img {
+    width: 200px;
+    height: 200px;
+    border-radius: 20px;
+}
+
+#highscores .btn {
+    width: 50px;
+}
+
+#highscores h3 {
+    width: 300px;
+    margin-bottom: 0;
+    text-align: left;
+}
+
+#submit-button {
+    margin-top: 5px;
+}
+
+input#username {
+    margin-top: 20px;
+    width: 160px;
+    padding: 5px;
+    box-sizing: border-box;
+    border: none;
+    text-align: center;
+}
